@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,8EAAI;AAEZ,OAAO,CAAC,kFAAI;ACFZ,OAAO,CAAC,iFAAI",
+    "sources": [
+        "glob.scss",
+        "_bootstrap.scss",
+        "_font-awesome.scss",
+        "_fonts.scss"
+    ],
+    "names": [],
+    "file": "glob.css"
+}

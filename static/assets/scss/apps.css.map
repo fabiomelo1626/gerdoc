@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "AEAA,OAAO,CAAC,8EAAI;AAEZ,OAAO,CAAC,kFAAI;ACFZ,OAAO,CAAC,iFAAI",
+    "sources": [
+        "apps.scss",
+        "autoloads/glob.scss",
+        "autoloads/_bootstrap.scss",
+        "autoloads/_font-awesome.scss",
+        "autoloads/_fonts.scss"
+    ],
+    "names": [],
+    "file": "apps.css"
+}
