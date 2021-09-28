@@ -27,7 +27,10 @@ LOCAL_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRDY_APPS = []
+THIRDY_APPS = [
+    'django_bootstrap5',
+    'widget_tweaks',
+]
 
 CREATED_APPS = [
     'apps.usuarios',
