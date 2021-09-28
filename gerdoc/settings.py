@@ -33,8 +33,8 @@ THIRDY_APPS = [
 ]
 
 CREATED_APPS = [
-    'apps.usuarios',
     'apps.core',
+    'apps.funcionarios.apps.FuncionariosConfig',
     'apps.empresas.apps.EmpresasConfig',
     'apps.departamentos.apps.DepartamentosConfig',
     'apps.documentos',
@@ -126,7 +126,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-AUTH_USER_MODEL = 'usuarios.Usuarios'
+AUTH_USER_MODEL = 'funcionarios.Funcionarios'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
