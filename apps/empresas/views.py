@@ -1,16 +1,18 @@
 from django.shortcuts import render, reverse
+from django.urls import reverse_lazy
 from .models import *
+from .forms import *
 from django.views.generic import (
     CreateView,
     ListView,
     DetailView,
+    UpdateView,
     DeleteView,
 )
 
 
 class NovaEmpresa(CreateView):
-    model = Empresas
-    fields = '__all__'
+    form_class = EmpresasForm
     template_name = 'empresas/nova_empresa.html'
 
     def get_success_url(self):
@@ -27,6 +29,20 @@ class DetalheEmpresa(DetailView):
     template_name = 'empresas/detalhe_empresa.html'
 
 
+class EditarEmpresa(UpdateView):
+    model = Empresas
+    template_name = 'empresas/editar_empresa.html'
+    fields = (
+        'razao_social',
+        'nome_fantasia',
+        'cnpj',
+        'endereco',
+        'email',
+        'telefone',
+    )
+
+
 class DeletarEmpresa(DeleteView):
     model = Empresas
     template_name = 'empresas/confirme_delete_empresa.html'
+    success_url = reverse_lazy('empresas:lista_empresas')

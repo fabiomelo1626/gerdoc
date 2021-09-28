@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Deletar Empresa{% endblock %}
+{% block title %}Deletar Departamento{% endblock %}
 
 {% block content %}
 <div class="row col-12">
 	<div class="content-header">
 		<hgroup class="content-header-title">
-			<h3>Empresas</h3>
-			<h6>Deletar Empresa</h6>
+			<h3>Departamentos</h3>
+			<h6>Deletar Departamento</h6>
 		</hgroup>
 		<div class="content-header-pages">
 		</div>
@@ -17,9 +17,9 @@
 			<div class='card-header header-title'>
 				<p>
 					<a href="{% url 'core:home' %}">Home</a> /
-					<a href="{% url 'empresas:lista_empresas' %}">Lista de Empresas</a> /
-					<a href="{% url 'empresas:detalhe_empresa' object.pk %}">Detalhe da Empresa</a> /
-					Deletar Empresa
+					<a href="{% url 'departamentos:lista_departamentos' %}">Lista de Departamentos</a> /
+					<a href="{% url 'departamentos:detalhe_departamento' object.pk %}">Detalhe do Departamentos</a> /
+					Deletar Departamento
 				</p>
 			</div>
 			<div class='card-body'>
@@ -27,14 +27,14 @@
                     {% csrf_token %}
                     <div class="row g-3">
                         <div>
-                            <h2>Tem certeza que deseja excluir "<strong>{{ object.nome_fantasia }}</strong>"?</h2>
+                            <h2>Tem certeza que deseja excluir "<strong>{{ object.nome }}</strong>"?</h2>
                         </div>
                         <div class="button-form col-md-12">
                             <button type="submit" class="btn btn-primary">
                                 <i class="far fa-check-circle"></i>
                                 Sim
                             </button>
-                            <a href="{% url 'empresas:detalhe_empresa' object.pk %}" type="button" class="btn btn-secondary">
+                            <a href="{% url 'departamentos:detalhe_departamento' object.pk %}" type="button" class="btn btn-secondary">
                                 <i class="bi bi-x-circle"></i>
                                 Não
                             </a>
