@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Informações da Empresa{% endblock %}
+
+{% block content %}
+<div class="row col-12">
+	<div class="content-header">
+		<hgroup class="content-header-title">
+			<h3>Empresas</h3>
+			<h6>Informações da Empresa</h6>
+		</hgroup>
+		<div class="content-header-pages">
+		</div>
+	</div>
+	<div class='container'>
+		<div class='card'>
+			<div class='card-header header-title'>
+				<p>
+					<a href="{% url 'core:home' %}">Home</a> /
+					<a href="{% url 'empresas:lista_empresas' %}">Lista de Empresas</a> /
+					Informações da Empresa
+				</p>
+			</div>
+			<div class='card-body'>
+				<div>
+					<h4>{{ object.nome_fantasia }}</h4>
+				</div>
+				<ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>Razão Social:</strong>
+                        {{ object.razao_social }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Nome Fantasia:</strong>
+                        {{ object.nome_fantasia }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Cnpj:</strong>
+                        {{ object.cnpj }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Endereço:</strong>
+                        {{ object.endereco }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>E-mail:</strong>
+                        {{ object.email }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Telefone:</strong>
+                        {{ object.telefone }}
+                    </li>
+                </ul>
+                <div class="button-detail col-md-12">
+                    <a href="" type="button" class="btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                        Excluir
+                    </a>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

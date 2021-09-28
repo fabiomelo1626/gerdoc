@@ -441,4 +441,9 @@ h1, .h1 {
 .dashboard-content .card .form span {
   color: red;
 }
+
+.dashboard-content .card .card-body ul {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
 /*# sourceMappingURL=apps.css.map */
