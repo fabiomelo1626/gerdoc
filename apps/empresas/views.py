@@ -6,6 +6,7 @@ from django.views.generic import (
     CreateView,
     ListView,
     DetailView,
+    UpdateView,
     DeleteView,
 )
 
@@ -26,6 +27,19 @@ class ListaEmpresas(ListView):
 class DetalheEmpresa(DetailView):
     model = Empresas
     template_name = 'empresas/detalhe_empresa.html'
+
+
+class EditarEmpresa(UpdateView):
+    model = Empresas
+    template_name = 'empresas/editar_empresa.html'
+    fields = (
+        'razao_social',
+        'nome_fantasia',
+        'cnpj',
+        'endereco',
+        'email',
+        'telefone',
+    )
 
 
 class DeletarEmpresa(DeleteView):

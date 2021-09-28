@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Deletar Departamento{% endblock %}
+
+{% block content %}
+<div class="row col-12">
+	<div class="content-header">
+		<hgroup class="content-header-title">
+			<h3>Departamentos</h3>
+			<h6>Deletar Departamento</h6>
+		</hgroup>
+		<div class="content-header-pages">
+		</div>
+	</div>
+	<div class='container'>
+		<div class='card'>
+			<div class='card-header header-title'>
+				<p>
+					<a href="{% url 'core:home' %}">Home</a> /
+					<a href="{% url 'departamentos:lista_departamentos' %}">Lista de Departamentos</a> /
+					<a href="{% url 'departamentos:detalhe_departamento' object.pk %}">Detalhe do Departamentos</a> /
+					Deletar Departamento
+				</p>
+			</div>
+			<div class='card-body'>
+				<form action="" method="POST" class="form-delete">
+                    {% csrf_token %}
+                    <div class="row g-3">
+                        <div>
+                            <h2>Tem certeza que deseja excluir "<strong>{{ object.nome }}</strong>"?</h2>
+                        </div>
+                        <div class="button-form col-md-12">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="far fa-check-circle"></i>
+                                Sim
+                            </button>
+                            <a href="{% url 'departamentos:detalhe_departamento' object.pk %}" type="button" class="btn btn-secondary">
+                                <i class="bi bi-x-circle"></i>
+                                Não
+                            </a>
+                        </div>
+                    </div>
+                </form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

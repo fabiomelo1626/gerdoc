@@ -36,7 +36,7 @@ CREATED_APPS = [
     'apps.usuarios',
     'apps.core',
     'apps.empresas.apps.EmpresasConfig',
-    'apps.departamentos',
+    'apps.departamentos.apps.DepartamentosConfig',
     'apps.documentos',
 ]
 

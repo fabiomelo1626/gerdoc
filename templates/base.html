@@ -31,11 +31,11 @@
                     <i class="fas fa-home"></i>
                     Home
                 </a>
-                <a href="{% url 'empresas:lista_empresas' %}" class="dashboard-nav-item {% if url_name == 'lista_empresas' or url_name == 'nova_empresa' or url_name == 'detalhe_empresa' or url_name == 'deletar_empresa' %}active{% endif %}">
+                <a href="{% url 'empresas:lista_empresas' %}" class="dashboard-nav-item {% if url_name == 'lista_empresas' or url_name == 'nova_empresa' or url_name == 'detalhe_empresa' or url_name == 'editar_empresa' or url_name == 'deletar_empresa' %}active{% endif %}">
                     <i class="fas fa-building"></i>
                     Empresas
                 </a>
-                <a href="#" class="dashboard-nav-item">
+                <a href="{% url 'departamentos:lista_departamentos' %}" class="dashboard-nav-item {% if url_name == 'lista_departamentos' or url_name == 'novo_departamento' or url_name == 'detalhe_departamento' or url_name == 'editar_departamento' or url_name == 'deletar_departamento' %}active{% endif %}">
                     <i class="fas fa-boxes"></i> 
                     Departamentos 
                 </a>

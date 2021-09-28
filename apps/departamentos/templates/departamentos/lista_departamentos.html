@@ -6,8 +6,8 @@
 <div class="row col-12">
 	<div class="content-header">
 		<hgroup class="content-header-title">
-			<h3>Empresas</h3>
-			<h6>Lista de Empresas</h6>
+			<h3>Departamentos</h3>
+			<h6>Lista de Departamentos</h6>
 		</hgroup>
 		<div class="content-header-pages">
 		</div>
@@ -25,32 +25,26 @@
 				</form>
 				<p>
 					<a href="{% url 'core:home' %}">Home</a> /
-					Lista de Empresas
+					Lista de Departamentos
 				</p>
 			</div>
 			<div class='card-body'>
 				{% if object_list %}
-					{% for empresa in object_list %}
+					{% for departamento in object_list %}
 						<div class="table-responsive">
 							<table class="table custom-table">
 								<thead class="table-dark">
 									<tr>
-										<th scope="col">Razão Social</th>
-										<th scope="col">Nome Fantasia</th>
-										<th scope="col">Cnpj</th>
-										<th scope="col">E-mail</th>
-										<th scope="col">Telefone</th>
+										<th scope="col">Nome</th>
+										<th scope="col">Empresa</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr scope="row">
 										<td>
-											<a href="{% url 'empresas:detalhe_empresa' empresa.pk %}">{{ empresa.razao_social }}</a>
+											<a href="{% url 'departamentos:detalhe_departamento' departamento.pk %}">{{ departamento.nome }}</a>
 										</td>
-										<td>{{ empresa.nome_fantasia }}</td>
-										<td>{{ empresa.cnpj }}</td>
-										<td>{{ empresa.email }}</td>
-										<td>{{ empresa.telefone }}</td>
+										<td>{{ departamento.empresa }}</td>
 									</tr>
 								</tbody>
 							</table>
@@ -62,14 +56,14 @@
 							<i class="fas fa-exclamation-circle alert-icon"></i>
 						</div>
 						<div class="alert-content">
-							Empresa não Cadastrada!
+							Departamento não Cadastrado!
 						</div>
 					</div>
 				{% endif %}
 				<div class="table-button">
-					<a href="{% url 'empresas:nova_empresa' %}" class="btn btn-success" title="Adicionar empresa">
+					<a href="{% url 'departamentos:novo_departamento' %}" class="btn btn-success" title="Adicionar departamento">
 						<i class="fas fa-plus"></i>
-						Empresa
+						Departamento
 					</a>
 				</div>
 			</div>
