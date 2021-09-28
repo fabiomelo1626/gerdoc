@@ -45,7 +45,7 @@
 								<tbody>
 									<tr scope="row">
 										<td>
-											<a href="{% url 'empresas:detalhe_empresa' empresa.id %}">{{ empresa.razao_social }}</a>
+											<a href="{% url 'empresas:detalhe_empresa' empresa.pk %}">{{ empresa.razao_social }}</a>
 										</td>
 										<td>{{ empresa.nome_fantasia }}</td>
 										<td>{{ empresa.cnpj }}</td>

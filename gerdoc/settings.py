@@ -35,7 +35,7 @@ THIRDY_APPS = [
 CREATED_APPS = [
     'apps.usuarios',
     'apps.core',
-    'apps.empresas',
+    'apps.empresas.apps.EmpresasConfig',
     'apps.departamentos',
     'apps.documentos',
 ]
