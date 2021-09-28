@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="row col-12">
+	<div class="content-header">
+		<hgroup class="content-header-title">
+			<h3>Funcionários</h3>
+			<h6>Lista de Funcionários</h6>
+		</hgroup>
+		<div class="content-header-pages">
+		</div>
+	</div>
+	<div class='container'>
+		<div class='card'>
+			<div class='card-header'>
+				<form action="." method="GET" class="d-flex navbar-form">
+					<div class="form-group">
+						<input class="form-control me-2" type="search" name="busca" value="" placeholder="Pesquisar" aria-label="Search">
+					</div>
+					<button class="btn btn-light" type="submit">
+						<span class="fa fa-search"></span>
+					</button>
+				</form>
+				<p>
+					<a href="{% url 'core:home' %}">Home</a> /
+					Lista de Funcionários
+				</p>
+			</div>
+			<div class='card-body'>
+				{% if object_list %}
+					{% for funcionario in object_list %}
+						<div class="table-responsive">
+							<table class="table custom-table">
+								<thead class="table-dark">
+									<tr>
+										<th scope="col">Nome</th>
+										<th scope="col">Cpf</th>
+										<th scope="col">Departamento</th>
+										<th scope="col">E-mail</th>
+										<th scope="col">Telefone</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr scope="row">
+										<td>
+											<a href="">
+												{{ funcionario.first_name }} {{ funcionario.last_name }}
+											</a>
+										</td>
+										<td>{{ funcionario.cpf }}</td>
+										<td>{{ funcionario.departamento }}</td>
+										<td>{{ empresa.email }}</td>
+										<td>{{ empresa.telefone }}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					{% endfor %}
+				{% else %}
+					<div class="alert alert-danger alert-list" role="alert">
+						<div class="alert-title">
+							<i class="fas fa-exclamation-circle alert-icon"></i>
+						</div>
+						<div class="alert-content">
+							Funcionário não Cadastrado!
+						</div>
+					</div>
+				{% endif %}
+				<div class="table-button">
+					<a href="{% url 'funcionarios:novo_funcionario' %}" class="btn btn-success" title="Adicionar funcionário">
+						<i class="fas fa-plus"></i>
+						Funcionário
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

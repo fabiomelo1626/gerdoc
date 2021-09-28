@@ -1,6 +1,6 @@
 from django.db import models
 from apps.departamentos.models import Departamentos
-from apps.usuarios.models import Usuarios
+from apps.funcionarios.models import Funcionarios
 
 
 class Requerimentos(models.Model):
