@@ -18,7 +18,10 @@
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: 2px solid rgba(0, 108, 168, 0.8);
   border-radius: 0;
 }
 
@@ -40,5 +43,15 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.dashboard-content .card .header-title {
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.dashboard-content .card .form span {
+  color: red;
 }
 /*# sourceMappingURL=glob.css.map */
