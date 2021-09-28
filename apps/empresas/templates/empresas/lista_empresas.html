@@ -1,35 +1,79 @@
 {% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
 {% block content %}
-<div class="container">
-    <form class="" action="#">
-        <div class="row">
-              <div class="col"><input name="query" class="form-control mr-sm-2" type="text"
-                                            placeholder="Search" aria-label="Search">
-              </div>
-              <div class="col"><button class="btn btn-outline-success my-2 my-sm-0"
-                                     type="submit">Pesquisa</button>
-              </div>
-        </div>
-    </form>
-    <table class="table">
-        {% for form in object_list %}
-         <thead>
-            <tr>
-              <th scope="col">Nome Fantasia</th>
-              <th scope="col">CNPJ</th>
-              <th scope="col">email</th>
-              <th scope="col">Razao Social</th>
-            </tr>
-         </thead>
-        <tbody>
-            <tr>
-              <td>{{form.nome_fantasia}}</td>
-              <td>{{form.cnpj}}</td>
-              <td>{{form.email}}</td>
-              <td>{{form.razao_social}}</td>
-            </tr>
-           {% endfor %}
-        </tbody>
-    </table>
+<div class="row col-12">
+	<div class="content-header">
+		<hgroup class="content-header-title">
+			<h3>Empresas</h3>
+			<h6>Lista de Empresas</h6>
+		</hgroup>
+		<div class="content-header-pages">
+		</div>
+	</div>
+	<div class='container'>
+		<div class='card'>
+			<div class='card-header'>
+				<form action="." method="GET" class="d-flex navbar-form">
+					<div class="form-group">
+						<input class="form-control me-2" type="search" name="busca" value="" placeholder="Pesquisar" aria-label="Search">
+					</div>
+					<button class="btn btn-light" type="submit">
+						<span class="fa fa-search"></span>
+					</button>
+				</form>
+				<p>
+					<a href="{% url 'core:home' %}">Home</a> /
+					Lista de Empresas
+				</p>
+			</div>
+			<div class='card-body'>
+				{% if object_list %}
+					{% for empresa in object_list %}
+						<div class="table-responsive">
+							<table class="table custom-table">
+								<thead class="table-dark">
+									<tr>
+										<th scope="col">Razão Social</th>
+										<th scope="col">Nome Fantasia</th>
+										<th scope="col">Cnpj</th>
+										<th scope="col">E-mail</th>
+										<th scope="col">Telefone</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr scope="row">
+										<td>
+											<a href="">{{ empresa.razao_social }}</a>
+										</td>
+										<td>{{ empresa.nome_fantasia }}</td>
+										<td>{{ empresa.cnpj }}</td>
+										<td>{{ empresa.email }}</td>
+										<td>{{ empresa.telefone }}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					{% endfor %}
+				{% else %}
+					<div class="alert alert-danger alert-list" role="alert">
+						<div class="alert-title">
+							<i class="fas fa-exclamation-circle alert-icon"></i>
+						</div>
+						<div class="alert-content">
+							Empresa não Cadastrada!
+						</div>
+					</div>
+				{% endif %}
+				<div class="table-button">
+					<a href="{% url 'empresas:nova_empresa' %}" class="btn btn-success" title="Adicionar Empresa">
+						<i class="fas fa-plus"></i>
+						Empresa
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 {% endblock %}

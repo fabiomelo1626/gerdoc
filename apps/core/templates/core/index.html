@@ -1,8 +1,20 @@
 {% extends 'base.html' %}
 
-    {% block content %}
-    <a href="{% url 'usuarios:novo_usuario' %}">novo usuario</a>
-    <a href="{% url 'empresas:lista_empresas' %}">Empresa</a>
-    <a href="{% url 'departamentos:novo_departamento' %}">Departamento</a>
-    {% endblock %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class='container'>
+    <div class='card'>
+        <div class='card-header'>
+            <h1>Welcome back Jim</h1>
+        </div>
+        <div class='card-body'>
+            <p>Your account type is: Administrator</p>
+        </div>
+    </div>
+</div>
+<a href="{% url 'usuarios:novo_usuario' %}">novo usuario</a>
+<a href="">Empresa</a>
+<a href="{% url 'departamentos:novo_departamento' %}">Departamento</a>
+{% endblock %}
 

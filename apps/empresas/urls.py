@@ -6,6 +6,6 @@ app_name = 'empresas'
 
 
 urlpatterns = [
-    path('nova-empresa', login_required(NovaEmpresa.as_view()), name='nova_empresa'),
-    path('lita-empresas', login_required(ListaEmpresas.as_view()), name='lista_empresas'),
+    path('nova-empresa/', login_required(NovaEmpresa.as_view()), name='nova_empresa'),
+    path('lista-empresas/', login_required(ListaEmpresas.as_view()), name='lista_empresas'),
 ]

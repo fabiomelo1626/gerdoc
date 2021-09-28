@@ -9,7 +9,7 @@ class NovaEmpresa(CreateView):
     template_name = 'empresas/nova_empresa.html'
 
     def get_success_url(self):
-        return reverse('core:home')
+        return reverse('empresas:lista_empresas')
 
 class ListaEmpresas(ListView):
     model = Empresas
