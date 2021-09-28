@@ -1,6 +1,11 @@
 from django.shortcuts import render, reverse
-from django.views.generic import CreateView, ListView
 from .models import *
+from django.views.generic import (
+    CreateView,
+    ListView,
+    DetailView,
+    DeleteView,
+)
 
 
 class NovaEmpresa(CreateView):
@@ -11,6 +16,17 @@ class NovaEmpresa(CreateView):
     def get_success_url(self):
         return reverse('empresas:lista_empresas')
 
+
 class ListaEmpresas(ListView):
     model = Empresas
     template_name = 'empresas/lista_empresas.html'
+
+
+class DetalheEmpresa(DetailView):
+    model = Empresas
+    template_name = 'empresas/detalhe_empresa.html'
+
+
+class DeletarEmpresa(DeleteView):
+    model = Empresas
+    template_name = 'empresas/confirme_delete_empresa.html'
