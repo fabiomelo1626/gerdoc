@@ -30,26 +30,26 @@
 			</div>
 			<div class='card-body'>
 				{% if object_list %}
-					{% for departamento in object_list %}
-						<div class="table-responsive">
-							<table class="table custom-table">
-								<thead class="table-dark">
-									<tr>
-										<th scope="col">Nome</th>
-										<th scope="col">Empresa</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr scope="row">
-										<td>
-											<a href="{% url 'departamentos:detalhe_departamento' departamento.pk %}">{{ departamento.nome }}</a>
-										</td>
-										<td>{{ departamento.empresa }}</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					{% endfor %}
+					<div class="table-responsive">
+						<table class="table custom-table">
+							<thead class="table-dark">
+								<tr>
+									<th scope="col">Nome</th>
+									<th scope="col">Empresa</th>
+								</tr>
+							</thead>
+							<tbody>
+							{% for departamento in object_list %}
+								<tr scope="row">
+									<td>
+										<a href="{% url 'departamentos:detalhe_departamento' departamento.pk %}">{{ departamento.nome }}</a>
+									</td>
+									<td>{{ departamento.empresa }}</td>
+								</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+					</div>
 				{% else %}
 					<div class="alert alert-danger alert-list" role="alert">
 						<div class="alert-title">
