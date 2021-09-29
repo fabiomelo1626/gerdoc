@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Informações do Departamento{% endblock %}
+
+{% block content %}
+<div class="row col-12">
+	<div class="content-header">
+		<hgroup class="content-header-title">
+			<h3>Departamentos</h3>
+			<h6>Informações do Departamento</h6>
+		</hgroup>
+		<div class="content-header-pages">
+		</div>
+	</div>
+	<div class='container'>
+		<div class='card'>
+			<div class='card-header header-title'>
+				<p>
+					<a href="{% url 'core:home' %}">Home</a> /
+					<a href="{% url 'departamentos:lista_departamentos' %}">Lista de Departamentos</a> /
+					Informações do Departamento
+				</p>
+			</div>
+			<div class='card-body'>
+				<div>
+					<h4>{{ object.nome }}</h4>
+				</div>
+				<ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>Nome:</strong>
+                        {{ object.nome }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Empresa:</strong>
+                        {{ object.empresa }}
+                    </li>
+                </ul>
+                <div class="button-detail col-md-12">
+                    <a href="{% url 'departamentos:deletar_departamento' object.pk %}" type="button" class="btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                        Excluir
+                    </a>
+                    <a href="{% url 'departamentos:editar_departamento' object.pk %}" type="button" class="btn btn-warning">
+                        <i class="fas fa-edit"></i>
+                        Editar
+                    </a>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

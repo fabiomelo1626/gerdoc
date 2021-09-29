@@ -1,3 +1,9 @@
 from django.contrib import admin
+from apps.empresas.models import Empresas
 
-# Register your models here.
+
+@admin.register(Empresas)
+class EmpresasAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Empresas
+        fields = '__all__'

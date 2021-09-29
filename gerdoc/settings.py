@@ -27,14 +27,18 @@ LOCAL_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRDY_APPS = []
+THIRDY_APPS = [
+    'django_bootstrap5',
+    'widget_tweaks',
+]
 
 CREATED_APPS = [
-    'apps.usuarios',
     'apps.core',
-    'apps.empresas',
-    'apps.departamentos',
+    'apps.funcionarios.apps.FuncionariosConfig',
+    'apps.empresas.apps.EmpresasConfig',
+    'apps.departamentos.apps.DepartamentosConfig',
     'apps.documentos',
+    'apps.midia',
 ]
 
 INSTALLED_APPS = LOCAL_APPS + CREATED_APPS + THIRDY_APPS
@@ -123,7 +127,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-AUTH_USER_MODEL = 'usuarios.Usuarios'
+AUTH_USER_MODEL = 'funcionarios.Funcionarios'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
