@@ -30,7 +30,6 @@
 			</div>
 			<div class='card-body'>
 				{% if object_list %}
-					{% for funcionario in object_list %}
 						<div class="table-responsive">
 							<table class="table custom-table">
 								<thead class="table-dark">
@@ -43,6 +42,7 @@
 									</tr>
 								</thead>
 								<tbody>
+								{% for funcionario in object_list %}
 									<tr scope="row">
 										<td>
 											<a href="">
@@ -54,10 +54,10 @@
 										<td>{{ empresa.email }}</td>
 										<td>{{ empresa.telefone }}</td>
 									</tr>
+								{% endfor %}
 								</tbody>
 							</table>
 						</div>
-					{% endfor %}
 				{% else %}
 					<div class="alert alert-danger alert-list" role="alert">
 						<div class="alert-title">
