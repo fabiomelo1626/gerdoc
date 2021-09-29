@@ -38,6 +38,7 @@ CREATED_APPS = [
     'apps.empresas.apps.EmpresasConfig',
     'apps.departamentos.apps.DepartamentosConfig',
     'apps.documentos',
+    'apps.midia',
 ]
 
 INSTALLED_APPS = LOCAL_APPS + CREATED_APPS + THIRDY_APPS

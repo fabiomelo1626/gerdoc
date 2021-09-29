@@ -6,4 +6,3 @@ from .models import *
 
 class NovoDocumento(CreateView):
     form_class = DocumentosForm
-    

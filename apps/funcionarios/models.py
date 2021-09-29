@@ -5,8 +5,13 @@ from apps.empresas.models import Empresas
 
 
 class Funcionarios(AbstractUser):
-    departamento = models.ForeignKey(Departamentos, on_delete=models.PROTECT, null=True, blank=True)
-    endereco = models.CharField('endereco', max_length=200, blank=True, null=True)
+    empresa = models.ForeignKey(Empresas, on_delete=models.PROTECT, null=True, blank=True)
+    logradouro = models.CharField('endereco', max_length=200, blank=True, null=True)
+    numero = models.CharField('Numero', max_length=10, blank=True, null=True)
+    bairro = models.CharField('Bairro', max_length=100, blank=True, null=True)
+    cep = models.CharField('CEP', max_length=9, blank=True, null=True)
+    cidade = models.CharField('Cidade', max_length=100, blank=True, null=True)
+    uf = models.CharField('UF', max_length=2)
     telefone = models.CharField('telefone', max_length=15, blank=True, null=True)
     cpf = models.CharField('CPF', max_length=14, blank=True, null=True)
 

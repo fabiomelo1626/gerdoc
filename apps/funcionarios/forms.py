@@ -11,10 +11,15 @@ class FuncionarioCreateForm(UserCreationForm):
             'last_name',
             'username',
             'email',
-            'endereco',
+            'logradouro',
+            'numero',
+            'bairro',
+            'cep',
+            'cidade',
+            'uf',
             'cpf',
             'telefone',
-            'departamento',
+            'empresa',
         )
 
 

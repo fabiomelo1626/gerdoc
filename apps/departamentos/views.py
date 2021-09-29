@@ -15,6 +15,12 @@ class NovoDepartamento(CreateView):
     form_class = DepartamentosForm
     template_name = 'departamentos/novo_departamento.html'
 
+    def form_valid(self, form):
+        departamento = form.save(commit=False)
+        departamento.empresa = self.request.user.empresa
+        departamento.save()
+        return super(NovoDepartamento, self).form_valid(form)
+
     def get_success_url(self):
         return reverse('departamentos:lista_departamentos')
 
