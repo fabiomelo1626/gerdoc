@@ -1,5 +1,5 @@
 from django.contrib.auth import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from apps.funcionarios.models import Funcionarios
 
 
@@ -9,21 +9,35 @@ class FuncionarioCreateForm(UserCreationForm):
         fields = (
             'first_name',
             'last_name',
-            'username',
-            'email',
+            'cpf',
+            'departamento',
             'logradouro',
             'numero',
             'bairro',
             'cep',
-            'cidade',
             'uf',
-            'cpf',
+            'cidade',
+            'email',
             'telefone',
+            'username',
             'empresa',
         )
 
 
-class FuncionarioChangeForm(forms.UserChangeForm):
+class FuncionarioChangeForm(UserChangeForm):
     class Meta:
         model = Funcionarios
-        fields = 'password',
+        fields = (
+            'first_name',
+            'last_name',
+            'cpf',
+            'departamento',
+            'logradouro',
+            'numero',
+            'bairro',
+            'cep',
+            'uf',
+            'cidade',
+            'email',
+            'telefone',
+        )
